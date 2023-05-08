@@ -1,18 +1,6 @@
 <?php get_header(); ?>
 
 <div class="container mt-4 mb-5 pb-sm-4">
-    <div class="row newsletter-header" id="newsletter-header">
-        <div class="col-md-12">
-            <div class="newletter-logo-header mb-2">
-                <!--<img src="<?php //echo get_template_directory_uri(); ?>/static/img/integritystar-logo.png"
-                    alt="IntegrityStar UCF Compliance &amp; Ethics Newsletter" /> -->
-                <img src="https://compliance.ucf.edu/wp-content/themes/Compliance-Theme/static/img/integritystar-logo.png"
-                    alt="IntegrityStar UCF Compliance &amp; Ethics Newsletter" width="500px" class="d-inline" />
-                <h1 class="h5 d-inline pl-md-3">UCF Compliance &amp; Ethics Newsletter</h1>
-            </div>
-            <hr class="mb-5">
-        </div>
-    </div>
     <?php if ( have_posts() ): ?>
     <div class="row text-center">
         <?php while ( have_posts() ) : the_post(); ?>

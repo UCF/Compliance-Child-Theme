@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="container newsletter-containter mt-4 mb-5 pb-sm-4">
+<div class="container newsletter-containter m mb-5 pb-sm-4">
     <div class="row">
         <div class="col-md-7 newsletter-primary-container pr-md-5">
             <?php get_template_part( 'template-parts/single-newsletter_post', 'Newsletter Post' ); // Display Newsletter Articles ?>

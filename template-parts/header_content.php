@@ -12,10 +12,27 @@
 
 <?php if ( $title ): ?>
 <div class="container">
-    <?php if( ! is_post_type_archive('newsletter') ):  ?>
+    <?php if( is_post_type_archive('newsletter') ||  is_singular( 'newsletter' )   ):  ?>
+        <div class="row newsletter-header pt-3" id="newsletter-header">
+            <div class="col-md-12">
+                <div class="newletter-logo-header mb-2">
+                    <?php $newsletter_logo = get_field( 'newsletter_logo', 'option' ); //get logo from settings screen ?>
+                    <?php if ( $newsletter_logo ) : ?>
+                        <img src="<?php echo esc_url( $newsletter_logo['url'] ); ?>" alt="<?php echo esc_attr( $newsletter_logo['alt'] ); ?> " width="500px" class="d-inline img-fluid" />
+                    <?php endif; ?>              
+                    <h1 class="h5 d-inline pl-md-3"><?php the_field( 'newsletter_headline', 'option' ); ?></h1>
+                </div>
+                <hr class="mb-5">
+            </div>
+        </div>
+     <?php else: ?>
+
     <<?php echo $title_elem; ?> class="<?php echo $title_classes; ?>">
         <?php echo $title; ?>
-    </<?php echo $title_elem; ?> <?php endif; ?> <?php if ( $subtitle ): ?> <<?php echo $subtitle_elem; ?>
+    </<?php echo $title_elem; ?>
+     <?php endif; ?> 
+
+    <?php if ( $subtitle ): ?> <<?php echo $subtitle_elem; ?>
         class="<?php echo $subtitle_classes; ?>">
     <?php echo $subtitle; ?>
     </<?php echo $subtitle_elem; ?>>
