@@ -1,0 +1,40 @@
+.newsletter-containter {
+    border-bottom: 1px #cecece solid;
+}
+
+.newsletter-primary-container {
+    border-right: 1px #cecece solid;
+}
+
+.newsletter-primary-container .newsletter-post:not(:last-child) {
+    border-bottom: #ddd 1px solid;
+}
+
+
+
+/* Sidebar */
+
+.newsletter-sidebar-container .sidebar-item {
+    padding: 30px 0;
+}
+
+.newsletter-sidebar-container .sidebar-item:not(:last-child) {
+    border-bottom: #ddd 1px solid;
+}
+
+
+.message-from-title span {
+    line-height: .75em;
+    font-size: .487em;
+    font-style: italic;
+    font-weight: 400;
+    display: block;
+}
+
+.sidebar .read-more{
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 15px 0 0;
+    font-weight: 700;
+    color: #000;
+}
