@@ -12,9 +12,16 @@
 
 <?php if ( $title ): ?>
 <div class="container">
-    <?php if( is_post_type_archive('newsletter') ||  is_singular( 'newsletter' )   ):  ?>
-        <div class="row newsletter-header pt-3" id="newsletter-header">
+    <?php if( is_post_type_archive('newsletter') ||  is_singular( 'newsletter' )   ): // if newsletter archive or single use this header  ?>
+        <div class="row newsletter-header pt-4" id="newsletter-header">
             <div class="col-md-12">
+                <?php if(is_singular( 'newsletter' ) ): // if single page add issue title and link to archive page ?>
+                    <?php $newsletter_archive_link = get_post_type_archive_link('newsletter'); ?>
+                     <div class="newsletter-issue text-right pb-3"> 
+                        <?php the_title( '<span class=" text-uppercase h6">', '</span>' );?> 
+                        | <a href="<?php echo $newsletter_archive_link; ?>" class=" text-uppercase h6">See Previous Editions </a> 
+                    </div>
+                <?php endif ?>
                 <div class="newletter-logo-header mb-2">
                     <?php $newsletter_logo = get_field( 'newsletter_logo', 'option' ); //get logo from settings screen ?>
                     <?php if ( $newsletter_logo ) : ?>
